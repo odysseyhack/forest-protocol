@@ -3,6 +3,10 @@ version: '3.1'
 
 services:
 
+  api:
+    working_dir: "/go/src/gitlab.com/henkvanramshorst/forest"
+    build: "./"
+
   mongo:
     image: mongo
     restart: always
