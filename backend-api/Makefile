@@ -1,8 +1,7 @@
-api-start:
-	docker-compose up api
+start: mongo-start api-start
 
-api-stop:
-	docker-compose stop api
+api-start:
+	go run ./cmd/backend-api/main.go
 
 mongo-start:
 	docker-compose up -d mongo
