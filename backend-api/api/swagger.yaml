@@ -1,0 +1,138 @@
+swagger: '2.0'
+info:
+  description: Forest Protocol API for Odyssey hackathon
+  version: 1.0.0
+  title: Forest Protocol API
+
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+paths:
+  /location:
+    post:
+      summary: select
+      operationId: getLocationBasedData
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: locationPoint
+        description: Latitude and longitude of location
+        schema:
+          $ref: '#/definitions/LatLong'
+      responses:
+        200:
+          description: all the data!
+          schema:
+            $ref: '#/definitions/LocationData'
+  /community/{communityId}/recipe/{recipeId}:
+    post:
+      summary: select recipe for community
+      operationId: selectRecipe
+      produces:
+      - application/json
+      responses:
+        200:
+          description: succesfully selected recipe
+        500:
+          description: can't select recipe
+    parameters:
+    - type: string
+      name: communityId
+      in: path
+      required: true
+    - type: string
+      name: recipeId
+      in: path
+      required: true
+  /recipe:
+    post:
+      summary: Request the creation of recipe proposals
+      operationId: createRecipeProposals
+      description: Create a number of recipes based on the inputs
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: recipeInput
+        description: Inputs required for creating recipe proposals
+        schema:
+          $ref: '#/definitions/RecipeInput'
+      responses:
+        200:
+          description: Status 200
+          schema:
+            $ref: '#/definitions/Recipe'
+        400:
+          description: invalid input
+definitions:
+  RecipeInput:
+    type: object
+    required:
+    - name
+    properties:
+      id:
+        type: string
+        example: id1
+      name:
+        type: string
+        example: Beautiful Village in the Amazon
+  Recipe:
+    type: object
+    required:
+    - id
+    properties:
+      id:
+        type: string
+  LocationData:
+    type: object
+    properties:
+      soiltype:
+        type: string
+      weatherAlmanac:
+        $ref: "#/definitions/WeatherAlmanac"
+  LatLong:
+    type: object
+    properties:
+      lat:
+        type: string
+        format: string
+      long:
+        type: string
+        format: string
+  WeatherAlmanac:
+    type: object
+    properties:
+      lat:
+        type: string
+      long:
+        type: string
+      elevation:
+        type: string
+      months:
+        type: array
+        items:
+          $ref: "#/definitions/MonthlyWeather"
+  MonthlyWeather:
+    type: object
+    properties:
+      month:
+        type: integer
+        description: month 01=jan, 02=feb etc
+      avgHigh:
+        type: string
+      avgLow:
+        type: string
+      meanTemp:
+        type: string
+      precip:
+        type: string
+
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /jellevdp/forest-api/1.0.0
+schemes:
+ - https
