@@ -1,0 +1,15 @@
+{
+  "name": "forest-dlt",
+  "version": "1.0.0",
+  "description": "Please add instructions for running the app locally.",
+  "main": "index.js",
+  "dependencies": {
+    "openzeppelin-solidity": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
