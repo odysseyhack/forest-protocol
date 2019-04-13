@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  namespace: forest-api
+  name: forest-api-ingress
+  annotations:
+    certmanager.k8s.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
+    nginx.ingress.kubernetes.io/proxy-body-size: 200m
+spec:
+  tls:
+    - secretName: "forest.test.unchain.io"
+      hosts:
+        - "forest-recommender.sandbox.unchain.io"
+  rules:
+    - host: "forest-recommender.sandbox.unchain.io"
+      http:
+        paths:
+          - path: "/"
+            backend:
+              serviceName: forest-recommender-api-service
+              servicePort: 80

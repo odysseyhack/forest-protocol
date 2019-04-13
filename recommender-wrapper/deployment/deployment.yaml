@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: forest-recommender-api
+  name: forest-recommender-api
+spec:
+  replicas: 1
+  strategy: {}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: forest-recommender-api
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: forest-recommender-api
+    spec:
+      containers:
+      - args:
+        - api
+        - --cfg=config/dev/config.toml
+        image: registry.unchain.io/forest/recommender-api:latest
+        name: forest-recommender-api
+        ports:
+        - containerPort: 8081
+        resources: {}
+        tty: true
+      restartPolicy: Always

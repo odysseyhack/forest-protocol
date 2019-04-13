@@ -10,26 +10,32 @@ import (
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/swag"
-	"github.com/go-openapi/validate"
 )
 
 // RecipeInput recipe input
 // swagger:model RecipeInput
 type RecipeInput struct {
 
-	// id
-	ID string `json:"id,omitempty"`
+	// community name
+	CommunityName string `json:"communityName,omitempty"`
 
-	// name
-	// Required: true
-	Name *string `json:"name"`
+	// dimensions
+	Dimensions *Dimensions `json:"dimensions,omitempty"`
+
+	// location data
+	LocationData *LocationData `json:"locationData,omitempty"`
 }
 
 // Validate validates this recipe input
 func (m *RecipeInput) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateName(formats); err != nil {
+	if err := m.validateDimensions(formats); err != nil {
+		// prop
+		res = append(res, err)
+	}
+
+	if err := m.validateLocationData(formats); err != nil {
 		// prop
 		res = append(res, err)
 	}
@@ -40,10 +46,39 @@ func (m *RecipeInput) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *RecipeInput) validateName(formats strfmt.Registry) error {
+func (m *RecipeInput) validateDimensions(formats strfmt.Registry) error {
 
-	if err := validate.Required("name", "body", m.Name); err != nil {
-		return err
+	if swag.IsZero(m.Dimensions) { // not required
+		return nil
+	}
+
+	if m.Dimensions != nil {
+
+		if err := m.Dimensions.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("dimensions")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *RecipeInput) validateLocationData(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.LocationData) { // not required
+		return nil
+	}
+
+	if m.LocationData != nil {
+
+		if err := m.LocationData.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("locationData")
+			}
+			return err
+		}
 	}
 
 	return nil

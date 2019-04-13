@@ -17,6 +17,7 @@ func New(logger logger.Logger, cfg *backend_api.Config) (*RecommenderService) {
 	}
 }
 
-func (s *RecommenderService) GetRecommendation(request domain.RecommendationRequest) () {
-
+func (s *RecommenderService) GetRecommendation(request domain.RecommendationRequest) (error) {
+	return nil
 }
+

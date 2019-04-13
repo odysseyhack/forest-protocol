@@ -113,7 +113,10 @@ func init() {
           "200": {
             "description": "Status 200",
             "schema": {
-              "$ref": "#/definitions/Recipe"
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Recipe"
+              }
             }
           },
           "400": {
@@ -124,6 +127,40 @@ func init() {
     }
   },
   "definitions": {
+    "Dimensions": {
+      "type": "object",
+      "properties": {
+        "biodiversity": {
+          "type": "integer"
+        },
+        "envProtection": {
+          "type": "integer"
+        },
+        "foodSecurity": {
+          "type": "integer"
+        },
+        "irr": {
+          "type": "integer"
+        },
+        "jobOpportunities": {
+          "type": "integer"
+        }
+      }
+    },
+    "Flora": {
+      "type": "object",
+      "properties": {
+        "imageUrl": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "percentage": {
+          "type": "integer"
+        }
+      }
+    },
     "LatLong": {
       "type": "object",
       "properties": {
@@ -145,6 +182,20 @@ func init() {
         },
         "weatherAlmanac": {
           "$ref": "#/definitions/WeatherAlmanac"
+        }
+      }
+    },
+    "Milestone": {
+      "type": "object",
+      "properties": {
+        "amount": {
+          "type": "integer"
+        },
+        "duration": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
         }
       }
     },
@@ -171,28 +222,38 @@ func init() {
     },
     "Recipe": {
       "type": "object",
-      "required": [
-        "id"
-      ],
       "properties": {
-        "id": {
+        "dimensions": {
+          "$ref": "#/definitions/Dimensions"
+        },
+        "flora": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Flora"
+          }
+        },
+        "milestones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Milestone"
+          }
+        },
+        "recipeId": {
           "type": "string"
         }
       }
     },
     "RecipeInput": {
       "type": "object",
-      "required": [
-        "name"
-      ],
       "properties": {
-        "id": {
-          "type": "string",
-          "example": "id1"
+        "communityName": {
+          "type": "string"
         },
-        "name": {
-          "type": "string",
-          "example": "Beautiful Village in the Amazon"
+        "dimensions": {
+          "$ref": "#/definitions/Dimensions"
+        },
+        "locationData": {
+          "$ref": "#/definitions/LocationData"
         }
       }
     },

@@ -65,28 +65,34 @@ paths:
         200:
           description: Status 200
           schema:
-            $ref: '#/definitions/Recipe'
+            type: array
+            items:
+              $ref: '#/definitions/Recipe'
         400:
           description: invalid input
 definitions:
   RecipeInput:
     type: object
-    required:
-    - name
     properties:
-      id:
+      communityName:
         type: string
-        example: id1
-      name:
-        type: string
-        example: Beautiful Village in the Amazon
-  Recipe:
+      dimensions:
+        $ref: '#/definitions/Dimensions'
+      locationData:
+        $ref: '#/definitions/LocationData'
+  Dimensions:
     type: object
-    required:
-    - id
     properties:
-      id:
-        type: string
+      jobOpportunities:
+        type: integer
+      biodiversity:
+        type: integer
+      envProtection:
+        type: integer
+      foodSecurity:
+        type: integer
+      irr:
+        type: integer
   LocationData:
     type: object
     properties:
@@ -136,6 +142,39 @@ definitions:
       silt:
         type: integer
       sand:
+        type: integer
+  Recipe:
+    type: object
+    properties:
+      recipeId:
+        type: string
+      dimensions:
+        $ref: "#/definitions/Dimensions"
+      flora:
+        type: array
+        items:
+          $ref: "#/definitions/Flora"
+      milestones:
+        type: array
+        items:
+          $ref: "#/definitions/Milestone"
+  Flora:
+    type: object
+    properties:
+      name:
+        type: string
+      percentage:
+        type: integer
+      imageUrl:
+        type: string
+  Milestone:
+    type: object
+    properties:
+      name:
+        type: string
+      amount:
+        type: integer
+      duration:
         type: integer
 
 # Added by API Auto Mocking Plugin

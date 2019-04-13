@@ -25,7 +25,7 @@ type CreateRecipeProposalsOK struct {
 	/*
 	  In: Body
 	*/
-	Payload *dto.Recipe `json:"body,omitempty"`
+	Payload dto.CreateRecipeProposalsOKBody `json:"body,omitempty"`
 }
 
 // NewCreateRecipeProposalsOK creates CreateRecipeProposalsOK with default headers values
@@ -34,13 +34,13 @@ func NewCreateRecipeProposalsOK() *CreateRecipeProposalsOK {
 }
 
 // WithPayload adds the payload to the create recipe proposals o k response
-func (o *CreateRecipeProposalsOK) WithPayload(payload *dto.Recipe) *CreateRecipeProposalsOK {
+func (o *CreateRecipeProposalsOK) WithPayload(payload dto.CreateRecipeProposalsOKBody) *CreateRecipeProposalsOK {
 	o.Payload = payload
 	return o
 }
 
 // SetPayload sets the payload to the create recipe proposals o k response
-func (o *CreateRecipeProposalsOK) SetPayload(payload *dto.Recipe) {
+func (o *CreateRecipeProposalsOK) SetPayload(payload dto.CreateRecipeProposalsOKBody) {
 	o.Payload = payload
 }
 
@@ -48,12 +48,15 @@ func (o *CreateRecipeProposalsOK) SetPayload(payload *dto.Recipe) {
 func (o *CreateRecipeProposalsOK) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
 
 	rw.WriteHeader(200)
-	if o.Payload != nil {
-		payload := o.Payload
-		if err := producer.Produce(rw, payload); err != nil {
-			panic(err) // let the recovery middleware deal with this
-		}
+	payload := o.Payload
+	if payload == nil {
+		payload = make(dto.CreateRecipeProposalsOKBody, 0, 50)
 	}
+
+	if err := producer.Produce(rw, payload); err != nil {
+		panic(err) // let the recovery middleware deal with this
+	}
+
 }
 
 // CreateRecipeProposalsBadRequestCode is the HTTP code returned for type CreateRecipeProposalsBadRequest
