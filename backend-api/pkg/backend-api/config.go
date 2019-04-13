@@ -1,8 +1,8 @@
-package config
+package backend_api
 
 import "github.com/unchainio/pkg/xlogger"
 
-type ServerConfig struct {
+type Config struct {
 	Logger *xlogger.Config
 	Port string
 }
