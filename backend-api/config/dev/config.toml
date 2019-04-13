@@ -1,3 +1,5 @@
 apiPort = ":8081"
 
 featherBaseURL = "https://feathers.develop.giveth.io"
+
+weatherBaseUrl = "https://13f60b9e-32e8-4e09-94d5-75c5cda8bc79:pt1V1BBPSU@twcservice.eu-gb.mybluemix.net"

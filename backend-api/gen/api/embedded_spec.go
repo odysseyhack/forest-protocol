@@ -162,7 +162,7 @@ func init() {
         },
         "month": {
           "description": "month 01=jan, 02=feb etc",
-          "type": "integer"
+          "type": "string"
         },
         "precip": {
           "type": "string"
@@ -199,9 +199,6 @@ func init() {
     "WeatherAlmanac": {
       "type": "object",
       "properties": {
-        "elevation": {
-          "type": "string"
-        },
         "lat": {
           "type": "string"
         },

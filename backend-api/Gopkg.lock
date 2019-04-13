@@ -10,12 +10,146 @@
   version = "v0.3.1"
 
 [[projects]]
+  digest = "1:a2682518d905d662d984ef9959984ef87cecb777d379bfa9d9fe40e78069b3e4"
+  name = "github.com/PuerkitoBio/purell"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "44968752391892e1b0d0b821ee79e9a85fa13049"
+  version = "v1.1.1"
+
+[[projects]]
+  branch = "master"
+  digest = "1:c739832d67eb1e9cc478a19cc1a1ccd78df0397bf8a32978b759152e205f644b"
+  name = "github.com/PuerkitoBio/urlesc"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "de5bf2ad457846296e2031421a34e2568e304e35"
+
+[[projects]]
+  digest = "1:320e7ead93de9fd2b0e59b50fd92a4d50c1f8ab455d96bc2eb083267453a9709"
+  name = "github.com/asaskevich/govalidator"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "ccb8e960c48f04d6935e72476ae4a51028f9e22f"
+  version = "v9"
+
+[[projects]]
+  branch = "master"
+  digest = "1:7fb51688eadf38272411852d7a2b3538c7caff53309abee6c0964a83c00fe69e"
+  name = "github.com/globalsign/mgo"
+  packages = [
+    "bson",
+    "internal/json",
+  ]
+  pruneopts = "UT"
+  revision = "eeefdecb41b842af6dc652aaea4026e8403e62df"
+
+[[projects]]
   digest = "1:1c70b4d7285f792bd387c1adac08825715147fa210b3d2826ffd2bf56be9455b"
   name = "github.com/go-chi/chi"
   packages = ["."]
   pruneopts = "UT"
   revision = "da24bba8dcd4021cafac38724bf10dccc97c3e36"
   version = "v4.0.2"
+
+[[projects]]
+  digest = "1:54d7b4b9ab2bb2bae35b55eea900bc8fe15cba05a95fc78bf7fd7b82a9a07afa"
+  name = "github.com/go-chi/render"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "3215478343fbc559bd3fc08f7031bb134d6bdad5"
+  version = "v1.0.1"
+
+[[projects]]
+  digest = "1:8c4be86399428a81749056c2d67feba95c1784b742ccf03ac7527d0b426bf22a"
+  name = "github.com/go-openapi/analysis"
+  packages = [
+    ".",
+    "internal",
+  ]
+  pruneopts = "UT"
+  revision = "e2f3fdbb7ed0e56e070ccbfb6fc75b288a33c014"
+  version = "v0.19.0"
+
+[[projects]]
+  digest = "1:d4a14966fe8f1ec9306792aaa4d135392b04ab5eb5830d485199dbf0ddb1132b"
+  name = "github.com/go-openapi/errors"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "7a7ff1b7b8020f22574411a32f28b4d168d69237"
+  version = "v0.19.0"
+
+[[projects]]
+  digest = "1:953a2628e4c5c72856b53f5470ed5e071c55eccf943d798d42908102af2a610f"
+  name = "github.com/go-openapi/jsonpointer"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "ef5f0afec364d3b9396b7b77b43dbe26bf1f8004"
+  version = "v0.19.0"
+
+[[projects]]
+  digest = "1:81210e0af657a0fb3638932ec68e645236bceefa4c839823db0c4d918f080895"
+  name = "github.com/go-openapi/jsonreference"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "8483a886a90412cd6858df4ea3483dce9c8e35a3"
+  version = "v0.19.0"
+
+[[projects]]
+  digest = "1:208878abf5fc4e435f9c382a06678f46be91270d0efa1f475134543f6ed7784a"
+  name = "github.com/go-openapi/loads"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "74628589c3b94e3526a842d24f46589980f5ab22"
+  version = "v0.19.0"
+
+[[projects]]
+  digest = "1:f601315efca293dedce38affe9397608f41a459dd1b4c4188ce33f044d8ebc18"
+  name = "github.com/go-openapi/runtime"
+  packages = [
+    ".",
+    "logger",
+    "middleware",
+    "middleware/denco",
+    "middleware/header",
+    "middleware/untyped",
+    "security",
+  ]
+  pruneopts = "UT"
+  revision = "109737172424d8a656fd1199e28c9f5cc89b0cca"
+  version = "v0.19.0"
+
+[[projects]]
+  digest = "1:34130204ce3bd3d32bd111e28d9155de1e78132dbf29b2c4cedeca510e954f3e"
+  name = "github.com/go-openapi/spec"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "53d776530bf78a11b03a7b52dd8a083086b045e5"
+  version = "v0.19.0"
+
+[[projects]]
+  digest = "1:46d47ab9ecb073a7feeb21af4f90d3657d793eac41f94d35b64bf3014f812856"
+  name = "github.com/go-openapi/strfmt"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "29177d4b5db488583bb97ebc05d3842ebeda91a8"
+  version = "v0.19.0"
+
+[[projects]]
+  digest = "1:937e7dbdd1a44b6a295897142108b23001e76a2829968004ecba638ef9b3a88a"
+  name = "github.com/go-openapi/swag"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "b3e2804c8535ee0d1b89320afd98474d5b8e9e3b"
+  version = "v0.19.0"
+
+[[projects]]
+  digest = "1:965748ac4e6117c32cdcfa06a94384faceec54f7aa0a51128ec76834fbe68bc2"
+  name = "github.com/go-openapi/validate"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "5b1623be7460f5a3967a82c00d518048fb190f5e"
+  version = "v0.19.0"
 
 [[projects]]
   digest = "1:dfa416a1bb8139f30832543340f972f65c0db9932034cb6a1b42c5ac615a3fb8"
@@ -40,6 +174,26 @@
   pruneopts = "UT"
   revision = "f55edac94c9bbba5d6182a4be46d86a2c9b5b50e"
   version = "v1.0.2"
+
+[[projects]]
+  branch = "master"
+  digest = "1:df495c9184b4e6cbb9d55652236dbcbe72c65a1c8b6469da50722628cea474e7"
+  name = "github.com/mailru/easyjson"
+  packages = [
+    "buffer",
+    "jlexer",
+    "jwriter",
+  ]
+  pruneopts = "UT"
+  revision = "1ea4449da9834f4d333f1cc461c374aea217d249"
+
+[[projects]]
+  digest = "1:53bc4cd4914cd7cd52139990d5170d6dc99067ae31c56530621b18b35fc30318"
+  name = "github.com/mitchellh/mapstructure"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "3536a929edddb9a5b34bd6861dc4a9647cb459fe"
+  version = "v1.1.2"
 
 [[projects]]
   digest = "1:cf31692c14422fa27c83a05292eb5cbe0fb2775972e8f1f8446a71549bd8980b"
@@ -80,11 +234,51 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:82491a0790e0945762096c875e2e14932a5d7b37a7ce3e83ef3b50437a71e09a"
+  name = "golang.org/x/net"
+  packages = ["idna"]
+  pruneopts = "UT"
+  revision = "eb5bcb51f2a31c7d5141d810b70815c05d9c9146"
+
+[[projects]]
+  branch = "master"
   digest = "1:e2e51bf73862610e548f3acd292f447b500e53d792aa55260a8cb605dfd8ba09"
   name = "golang.org/x/sys"
   packages = ["unix"]
   pruneopts = "UT"
   revision = "0ad05ae3009d6413d3363aa09b350b2ec37daf09"
+
+[[projects]]
+  digest = "1:0c56024909189aee3364b7f21a95a27459f718aa7c199a5c111c36cfffd9eaef"
+  name = "golang.org/x/text"
+  packages = [
+    "collate",
+    "collate/build",
+    "internal/colltab",
+    "internal/gen",
+    "internal/tag",
+    "internal/triegen",
+    "internal/ucd",
+    "language",
+    "secure/bidirule",
+    "transform",
+    "unicode/bidi",
+    "unicode/cldr",
+    "unicode/norm",
+    "unicode/rangetable",
+    "width",
+  ]
+  pruneopts = "UT"
+  revision = "f21a4dfb5e38f5895301dc265a8def02365cc3d0"
+  version = "v0.3.0"
+
+[[projects]]
+  digest = "1:4d2e5a73dc1500038e504a8d78b986630e3626dc027bc030ba5c75da257cdb96"
+  name = "gopkg.in/yaml.v2"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "51d6538a90f86fe93ac480b35f37b2be17fef232"
+  version = "v2.2.2"
 
 [solve-meta]
   analyzer-name = "dep"
@@ -92,6 +286,16 @@
   input-imports = [
     "github.com/BurntSushi/toml",
     "github.com/go-chi/chi",
+    "github.com/go-chi/render",
+    "github.com/go-openapi/errors",
+    "github.com/go-openapi/loads",
+    "github.com/go-openapi/runtime",
+    "github.com/go-openapi/runtime/middleware",
+    "github.com/go-openapi/runtime/security",
+    "github.com/go-openapi/spec",
+    "github.com/go-openapi/strfmt",
+    "github.com/go-openapi/swag",
+    "github.com/go-openapi/validate",
     "github.com/goware/cors",
     "github.com/unchainio/interfaces/logger",
     "github.com/unchainio/pkg/iferr",

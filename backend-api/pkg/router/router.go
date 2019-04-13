@@ -19,6 +19,7 @@ func NewRouter(logger logger.Logger, cfg *backend_api.Config) (*chi.Mux, error) 
 	// Setup handlers
 	healthCheckHandler := handler.NewHealthCheckHandler(logger, cfg)
 	blockchainHandler := handler.NewBlockchainHandler(logger, cfg)
+	locationHandler := handler.NewLocationHandler(logger, cfg)
 
 	// Setup services
 
@@ -35,6 +36,8 @@ func NewRouter(logger logger.Logger, cfg *backend_api.Config) (*chi.Mux, error) 
 	r.Get("/blockchain/pledgeAdmins", blockchainHandler.PledgeAdmins)
 	r.Get("/blockchain/users", blockchainHandler.Users)
 	r.Get("/blockchain/whitelist", blockchainHandler.Whitelist)
+
+	r.Post("/location", locationHandler.GetLocationData)
 
 	return r, nil
 }

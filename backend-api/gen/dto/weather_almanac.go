@@ -16,9 +16,6 @@ import (
 // swagger:model WeatherAlmanac
 type WeatherAlmanac struct {
 
-	// elevation
-	Elevation string `json:"elevation,omitempty"`
-
 	// lat
 	Lat string `json:"lat,omitempty"`
 

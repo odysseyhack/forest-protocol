@@ -110,8 +110,6 @@ definitions:
         type: string
       long:
         type: string
-      elevation:
-        type: string
       months:
         type: array
         items:
@@ -120,7 +118,7 @@ definitions:
     type: object
     properties:
       month:
-        type: integer
+        type: string
         description: month 01=jan, 02=feb etc
       avgHigh:
         type: string

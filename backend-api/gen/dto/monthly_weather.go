@@ -26,7 +26,7 @@ type MonthlyWeather struct {
 	MeanTemp string `json:"meanTemp,omitempty"`
 
 	// month 01=jan, 02=feb etc
-	Month int64 `json:"month,omitempty"`
+	Month string `json:"month,omitempty"`
 
 	// precip
 	Precip string `json:"precip,omitempty"`
