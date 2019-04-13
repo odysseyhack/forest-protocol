@@ -1,2 +1,2 @@
 api-start:
-	go run ./cmd/backend-api/main.go
+	go run ./cmd/backend_api/main.go

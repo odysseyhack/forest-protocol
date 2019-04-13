@@ -1,1 +1,3 @@
 apiPort = ":8081"
+
+featherBaseURL = "http://localhost:3030"

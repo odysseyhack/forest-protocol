@@ -1,14 +1,15 @@
 package main
 
 import (
-	"github.com/BurntSushi/toml"
-	"github.com/unchainio/pkg/iferr"
-	"github.com/unchainio/pkg/xlogger"
-	"gitlab.com/henkvanramshorst/forest/backend-api/pgk/backend-api"
-	"gitlab.com/henkvanramshorst/forest/backend-api/pgk/router"
 	"io/ioutil"
 	"log"
 	"net/http"
+
+	"github.com/BurntSushi/toml"
+	"github.com/unchainio/pkg/iferr"
+	"github.com/unchainio/pkg/xlogger"
+	backend_api "gitlab.com/henkvanramshorst/forest/backend-api/pgk/backend_api"
+	"gitlab.com/henkvanramshorst/forest/backend-api/pgk/router"
 )
 
 func main() {
@@ -26,7 +27,7 @@ func main() {
 
 	logger.Printf("config loaded: %+v", cfg)
 
-	h, err := router.NewRouter(logger)
+	h, err := router.NewRouter(logger, cfg)
 	iferr.Exit(err)
 
 	log.Printf("listening on: http://localhost%s", cfg.ApiPort)
