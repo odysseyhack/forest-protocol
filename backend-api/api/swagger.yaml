@@ -91,7 +91,7 @@ definitions:
     type: object
     properties:
       soiltype:
-        type: string
+        $ref: "#/definitions/SoilType"
       weatherAlmanac:
         $ref: "#/definitions/WeatherAlmanac"
   LatLong:
@@ -128,6 +128,15 @@ definitions:
         type: string
       precip:
         type: string
+  SoilType:
+    type: object
+    properties:
+      clay:
+        type: integer
+      silt:
+        type: integer
+      sand:
+        type: integer
 
 # Added by API Auto Mocking Plugin
 host: virtserver.swaggerhub.com

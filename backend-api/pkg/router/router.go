@@ -39,5 +39,6 @@ func NewRouter(logger logger.Logger, cfg *backend_api.Config) (*chi.Mux, error) 
 
 	r.Post("/location", locationHandler.GetLocationData)
 
+
 	return r, nil
 }

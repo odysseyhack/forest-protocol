@@ -141,7 +141,7 @@ func init() {
       "type": "object",
       "properties": {
         "soiltype": {
-          "type": "string"
+          "$ref": "#/definitions/SoilType"
         },
         "weatherAlmanac": {
           "$ref": "#/definitions/WeatherAlmanac"
@@ -193,6 +193,20 @@ func init() {
         "name": {
           "type": "string",
           "example": "Beautiful Village in the Amazon"
+        }
+      }
+    },
+    "SoilType": {
+      "type": "object",
+      "properties": {
+        "clay": {
+          "type": "integer"
+        },
+        "sand": {
+          "type": "integer"
+        },
+        "silt": {
+          "type": "integer"
         }
       }
     },
