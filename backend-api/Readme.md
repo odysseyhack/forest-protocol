@@ -1,3 +1,10 @@
 # Readme
 
-Please add instructions for running the app locally.
+## Prerequisites
+
+* Docker
+* Go
+
+## Run FOREST api local
+
+`make start`
