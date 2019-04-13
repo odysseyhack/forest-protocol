@@ -17,13 +17,15 @@ func NewRouter(logger logger.Logger) (*chi.Mux, error) {
 
 	// Setup handlers
 	healthCheckHandler := handler.NewHealthCheckHandler(logger)
+	blockchainHandler := handler.NewBlockchainHandler(logger)
 
 	// Setup services
 
-	// Setup routes
-
 	// Health Check
 	r.Get("/", healthCheckHandler.HealthCheck)
+
+	// FeatherAPI
+	r.Get("/blockchain/campaigns", blockchainHandler.Campains)
 
 	return r, nil
 }

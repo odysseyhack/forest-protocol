@@ -13,6 +13,6 @@ func NewHealthCheckHandler(logger logger.Logger) *HealthCheckHandler {
 	return &HealthCheckHandler{logger: logger}
 }
 
-func (p *HealthCheckHandler) HealthCheck(w http.ResponseWriter, r *http.Request) {
+func (h *HealthCheckHandler) HealthCheck(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(`FOREST backend api`))
 }

@@ -29,6 +29,6 @@ func main() {
 	h, err := router.NewRouter(logger)
 	iferr.Exit(err)
 
-	log.Printf("listening on: http://localhost%s", cfg.Port)
-	log.Fatal(http.ListenAndServe(cfg.Port, h))
+	log.Printf("listening on: http://localhost%s", cfg.ApiPort)
+	log.Fatal(http.ListenAndServe(cfg.ApiPort, h))
 }
