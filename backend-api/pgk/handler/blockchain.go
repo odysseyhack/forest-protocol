@@ -7,7 +7,7 @@ import (
 
 	"github.com/unchainio/interfaces/logger"
 	"github.com/unchainio/pkg/iferr"
-	backend_api "gitlab.com/henkvanramshorst/forest/backend-api/pgk/backend_api"
+	"gitlab.com/henkvanramshorst/forest/backend-api/pgk/backend_api"
 )
 
 const (
