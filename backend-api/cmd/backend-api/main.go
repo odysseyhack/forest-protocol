@@ -26,7 +26,7 @@ func main() {
 
 	logger.Printf("config loaded: %+v", cfg)
 
-	h, err := router.NewRouter(logger)
+	h, err := router.NewRouter(logger, cfg)
 	iferr.Exit(err)
 
 	log.Printf("listening on: http://localhost%s", cfg.Port)
